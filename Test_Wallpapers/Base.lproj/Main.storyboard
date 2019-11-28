@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MeZ-xJ-lp9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Assemble-->
+        <scene sceneID="kzE-Qf-ixP">
+            <objects>
+                <viewController storyboardIdentifier="Assemble" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kUJ-Ux-j6U" customClass="AssembleLivePhotoViewController" customModule="Live_Photos_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eQy-Fw-jzb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="tIg-rz-0ml" customClass="PHLivePhotoView">
+                                <rect key="frame" x="19" y="20" width="337" height="180"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="w4u-2m-TF4"/>
+                                </constraints>
+                            </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gFm-bz-6Sz">
+                                <rect key="frame" x="46.5" y="452" width="282" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="282" id="e8M-6q-A0v"/>
+                                </constraints>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kku-sH-bpf">
+                                <rect key="frame" x="166.5" y="423.5" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knV-wz-Cfh">
+                                <rect key="frame" x="96" y="462" width="183" height="156"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Create Live Photo"/>
+                                <connections>
+                                    <action selector="assembleLivePhoto:" destination="kUJ-Ux-j6U" eventType="touchUpInside" id="3VV-Vb-wsh"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GX8-IK-d3W">
+                                <rect key="frame" x="19" y="207" width="337" height="168.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2RR-M5-ZKN">
+                                        <rect key="frame" x="0.0" y="0.0" width="168.5" height="168.5"/>
+                                        <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="2RR-M5-ZKN" secondAttribute="height" multiplier="1:1" id="UTT-fJ-yYJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DLj-ys-oX6">
+                                        <rect key="frame" x="168.5" y="0.0" width="168.5" height="168.5"/>
+                                        <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="efw-1r-HVI">
+                                <rect key="frame" x="19" y="380.5" width="337" height="33"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3T-LF-Fuv">
+                                        <rect key="frame" x="0.0" y="0.0" width="168.5" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Pick Photo"/>
+                                        <connections>
+                                            <action selector="pickPhoto:" destination="kUJ-Ux-j6U" eventType="touchUpInside" id="X6s-9a-AF5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVo-WM-cvP">
+                                        <rect key="frame" x="168.5" y="0.0" width="168.5" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Pick Video"/>
+                                        <connections>
+                                            <action selector="pickVideo:" destination="kUJ-Ux-j6U" eventType="touchUpInside" id="oay-S2-9JS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WYb-fe-0C7">
+                                <rect key="frame" x="140.5" y="424" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Kku-sH-bpf" firstAttribute="top" secondItem="efw-1r-HVI" secondAttribute="bottom" constant="10" id="0if-vU-eWY"/>
+                            <constraint firstItem="gFm-bz-6Sz" firstAttribute="top" secondItem="Kku-sH-bpf" secondAttribute="bottom" constant="8" id="2Ua-c9-TbK"/>
+                            <constraint firstItem="tIg-rz-0ml" firstAttribute="leading" secondItem="86n-wg-4rz" secondAttribute="leading" constant="19" id="73w-4H-fL9"/>
+                            <constraint firstItem="86n-wg-4rz" firstAttribute="trailing" secondItem="efw-1r-HVI" secondAttribute="trailing" constant="19" id="7aI-6r-47E"/>
+                            <constraint firstItem="WYb-fe-0C7" firstAttribute="centerY" secondItem="Kku-sH-bpf" secondAttribute="centerY" id="91N-5g-L6f"/>
+                            <constraint firstItem="GX8-IK-d3W" firstAttribute="centerX" secondItem="eQy-Fw-jzb" secondAttribute="centerX" id="BJS-UD-1GD"/>
+                            <constraint firstItem="86n-wg-4rz" firstAttribute="trailing" secondItem="tIg-rz-0ml" secondAttribute="trailing" constant="19" id="GTT-l7-X9K"/>
+                            <constraint firstItem="Kku-sH-bpf" firstAttribute="centerX" secondItem="eQy-Fw-jzb" secondAttribute="centerX" id="Y38-kK-2eE"/>
+                            <constraint firstItem="knV-wz-Cfh" firstAttribute="top" secondItem="gFm-bz-6Sz" secondAttribute="bottom" constant="8" id="YDF-0l-1qC"/>
+                            <constraint firstItem="Kku-sH-bpf" firstAttribute="leading" secondItem="WYb-fe-0C7" secondAttribute="trailing" constant="6" id="b7s-nm-LBn"/>
+                            <constraint firstItem="knV-wz-Cfh" firstAttribute="centerX" secondItem="eQy-Fw-jzb" secondAttribute="centerX" id="gIx-dk-xzF"/>
+                            <constraint firstItem="GX8-IK-d3W" firstAttribute="top" secondItem="tIg-rz-0ml" secondAttribute="bottom" constant="7" id="gbK-TZ-moq"/>
+                            <constraint firstItem="GX8-IK-d3W" firstAttribute="leading" secondItem="86n-wg-4rz" secondAttribute="leading" constant="19" id="gbz-PS-kck"/>
+                            <constraint firstItem="efw-1r-HVI" firstAttribute="top" secondItem="GX8-IK-d3W" secondAttribute="bottom" constant="5" id="jo7-e6-708"/>
+                            <constraint firstItem="tIg-rz-0ml" firstAttribute="top" secondItem="86n-wg-4rz" secondAttribute="top" id="k5q-YP-oOp"/>
+                            <constraint firstItem="86n-wg-4rz" firstAttribute="trailing" secondItem="GX8-IK-d3W" secondAttribute="trailing" constant="19" id="lpT-fw-KSR"/>
+                            <constraint firstItem="knV-wz-Cfh" firstAttribute="bottom" secondItem="86n-wg-4rz" secondAttribute="bottom" id="rUO-RF-Ozh"/>
+                            <constraint firstItem="efw-1r-HVI" firstAttribute="leading" secondItem="86n-wg-4rz" secondAttribute="leading" constant="19" id="wEg-pd-vT0"/>
+                            <constraint firstItem="gFm-bz-6Sz" firstAttribute="centerX" secondItem="eQy-Fw-jzb" secondAttribute="centerX" id="zSO-Pu-gZ8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="86n-wg-4rz"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Assemble" image="assemble-25" id="6Zc-2Y-QBp"/>
+                    <connections>
+                        <outlet property="activityView" destination="WYb-fe-0C7" id="Fko-Ob-hRq"/>
+                        <outlet property="assembleLivePhotoButton" destination="knV-wz-Cfh" id="FNo-JP-E69"/>
+                        <outlet property="keyPhotoView" destination="2RR-M5-ZKN" id="jqv-7S-iHt"/>
+                        <outlet property="livePhotoView" destination="tIg-rz-0ml" id="Blu-cU-6GM"/>
+                        <outlet property="pairedVideoView" destination="DLj-ys-oX6" id="4Ko-yI-Clg"/>
+                        <outlet property="pickKeyPhotoButton" destination="J3T-LF-Fuv" id="Gfp-fb-X1Y"/>
+                        <outlet property="pickPairedVideoButton" destination="qVo-WM-cvP" id="LUU-sq-vW0"/>
+                        <outlet property="progressView" destination="gFm-bz-6Sz" id="azt-UQ-bRD"/>
+                        <outlet property="statusLabel" destination="Kku-sH-bpf" id="nPY-Xo-wUI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HfB-vo-PTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="782" y="395"/>
+        </scene>
+        <!--Disassemble-->
+        <scene sceneID="urE-bF-3AT">
+            <objects>
+                <viewController storyboardIdentifier="Disassemble" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J2a-zW-9Xo" userLabel="Disassemble" customClass="DisassembleLivePhotoViewController" customModule="Live_Photos_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="esM-qE-7uQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="mzW-oL-o1v" customClass="PHLivePhotoView">
+                                <rect key="frame" x="19" y="20" width="337" height="180"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="r6M-SB-JNA"/>
+                                </constraints>
+                            </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sKA-6C-p0N">
+                                <rect key="frame" x="46.5" y="452" width="282" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="282" id="HBq-lg-hdd"/>
+                                </constraints>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lem-SN-eLh">
+                                <rect key="frame" x="166.5" y="423.5" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10i-ae-xwP">
+                                <rect key="frame" x="108.5" y="462" width="158" height="156"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Pick Live Photo"/>
+                                <connections>
+                                    <action selector="pickLivePhoto:" destination="J2a-zW-9Xo" eventType="touchUpInside" id="Xno-w9-4h0"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gGI-VZ-fZK">
+                                <rect key="frame" x="19" y="207" width="337" height="168.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="26O-Ac-lVa">
+                                        <rect key="frame" x="0.0" y="0.0" width="168.5" height="168.5"/>
+                                        <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="26O-Ac-lVa" secondAttribute="height" multiplier="1:1" id="DZl-Vu-SdO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="52K-14-n7Y">
+                                        <rect key="frame" x="168.5" y="0.0" width="168.5" height="168.5"/>
+                                        <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="grI-Bg-mrj">
+                                <rect key="frame" x="19" y="380.5" width="337" height="33"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5a-cq-9Zp">
+                                        <rect key="frame" x="0.0" y="0.0" width="168.5" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Save Photo"/>
+                                        <connections>
+                                            <action selector="savePhoto" destination="J2a-zW-9Xo" eventType="touchUpInside" id="ZsM-hO-GUR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Xr-Sr-dIC">
+                                        <rect key="frame" x="168.5" y="0.0" width="168.5" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Save Video"/>
+                                        <connections>
+                                            <action selector="saveVideo" destination="J2a-zW-9Xo" eventType="touchUpInside" id="3Ey-CS-MhC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Xhr-Fs-XRm">
+                                <rect key="frame" x="140.5" y="424" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="grI-Bg-mrj" firstAttribute="leading" secondItem="oSN-kW-csh" secondAttribute="leading" constant="19" id="2wK-DK-Rre"/>
+                            <constraint firstItem="Xhr-Fs-XRm" firstAttribute="centerY" secondItem="Lem-SN-eLh" secondAttribute="centerY" id="558-Iq-6Ig"/>
+                            <constraint firstItem="mzW-oL-o1v" firstAttribute="top" secondItem="oSN-kW-csh" secondAttribute="top" id="56A-ZK-cWe"/>
+                            <constraint firstItem="oSN-kW-csh" firstAttribute="trailing" secondItem="grI-Bg-mrj" secondAttribute="trailing" constant="19" id="7FI-NJ-X2R"/>
+                            <constraint firstItem="10i-ae-xwP" firstAttribute="centerX" secondItem="esM-qE-7uQ" secondAttribute="centerX" id="ADG-1f-fFJ"/>
+                            <constraint firstItem="oSN-kW-csh" firstAttribute="trailing" secondItem="gGI-VZ-fZK" secondAttribute="trailing" constant="19" id="C3T-b5-qlD"/>
+                            <constraint firstItem="Lem-SN-eLh" firstAttribute="leading" secondItem="Xhr-Fs-XRm" secondAttribute="trailing" constant="6" id="CQp-WZ-3ZQ"/>
+                            <constraint firstItem="oSN-kW-csh" firstAttribute="trailing" secondItem="mzW-oL-o1v" secondAttribute="trailing" constant="19" id="EuZ-wz-dY0"/>
+                            <constraint firstItem="Lem-SN-eLh" firstAttribute="top" secondItem="grI-Bg-mrj" secondAttribute="bottom" constant="10" id="c0q-Xc-HYs"/>
+                            <constraint firstItem="grI-Bg-mrj" firstAttribute="top" secondItem="gGI-VZ-fZK" secondAttribute="bottom" constant="5" id="cPt-1f-rm8"/>
+                            <constraint firstItem="gGI-VZ-fZK" firstAttribute="leading" secondItem="oSN-kW-csh" secondAttribute="leading" constant="19" id="fPy-ap-SNk"/>
+                            <constraint firstItem="sKA-6C-p0N" firstAttribute="top" secondItem="Lem-SN-eLh" secondAttribute="bottom" constant="8" id="gM9-0g-GTs"/>
+                            <constraint firstItem="gGI-VZ-fZK" firstAttribute="top" secondItem="mzW-oL-o1v" secondAttribute="bottom" constant="7" id="h9S-Hq-CBb"/>
+                            <constraint firstItem="mzW-oL-o1v" firstAttribute="leading" secondItem="oSN-kW-csh" secondAttribute="leading" constant="19" id="icJ-YL-QiV"/>
+                            <constraint firstItem="Lem-SN-eLh" firstAttribute="centerX" secondItem="esM-qE-7uQ" secondAttribute="centerX" id="rOQ-An-hbU"/>
+                            <constraint firstItem="sKA-6C-p0N" firstAttribute="centerX" secondItem="esM-qE-7uQ" secondAttribute="centerX" id="tST-S7-Dls"/>
+                            <constraint firstItem="10i-ae-xwP" firstAttribute="top" secondItem="sKA-6C-p0N" secondAttribute="bottom" constant="8" id="vt5-Oo-Sqz"/>
+                            <constraint firstItem="gGI-VZ-fZK" firstAttribute="centerX" secondItem="esM-qE-7uQ" secondAttribute="centerX" id="wkM-r3-tDt"/>
+                            <constraint firstItem="10i-ae-xwP" firstAttribute="bottom" secondItem="oSN-kW-csh" secondAttribute="bottom" id="zH4-KK-c0J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oSN-kW-csh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Disassemble" image="disassemble-25" id="Xk2-y5-w0O"/>
+                    <connections>
+                        <outlet property="activityView" destination="Xhr-Fs-XRm" id="gGO-ph-Vcs"/>
+                        <outlet property="keyPhotoView" destination="26O-Ac-lVa" id="XPm-9P-SSr"/>
+                        <outlet property="livePhotoView" destination="mzW-oL-o1v" id="UhE-Uc-wBv"/>
+                        <outlet property="pairedVideoView" destination="52K-14-n7Y" id="o7o-Xi-ofs"/>
+                        <outlet property="pickLivePhotoButton" destination="10i-ae-xwP" id="e43-f2-snd"/>
+                        <outlet property="progressView" destination="sKA-6C-p0N" id="IVE-aJ-H3j"/>
+                        <outlet property="saveKeyPhotoButton" destination="S5a-cq-9Zp" id="U1K-Bs-33Z"/>
+                        <outlet property="savePairedVideoButton" destination="9Xr-Sr-dIC" id="Syw-fJ-Rdg"/>
+                        <outlet property="statusLabel" destination="Lem-SN-eLh" id="ARP-LR-Xq0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tv0-W1-Jac" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="KNS-Kg-kh5">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MeZ-xJ-lp9" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" restorationIdentifier="TabBar" id="yRY-wD-pBR">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="J2a-zW-9Xo" kind="relationship" relationship="viewControllers" id="k9c-DK-bke"/>
+                        <segue destination="kUJ-Ux-j6U" kind="relationship" relationship="viewControllers" id="2Q5-Z6-Ytz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ryK-2p-3XI" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="assemble-25" width="16" height="16"/>
+        <image name="disassemble-25" width="16" height="16"/>
+    </resources>
+</document>
